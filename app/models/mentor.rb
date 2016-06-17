@@ -1,3 +1,2 @@
-class Mentor
-
+class Mentor < ActiveRecord::Base
 end
