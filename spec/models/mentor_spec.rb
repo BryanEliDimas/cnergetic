@@ -6,7 +6,6 @@ RSpec.describe Mentor, :type => :model do
     end
 
     it "creates a new mentor" do
-      mentor = Mentor.create!
-      expect(Mentor.count).to eq(1)
+      expect{ Mentor.create! }.to change(Mentor, :count).by(1)
     end
 end
