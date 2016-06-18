@@ -12,4 +12,6 @@ RSpec.describe Task, type: :model do
   it "raises ActiveRecord error when created without a name" do
     expect{ Task.create! }.to raise_error(ActiveRecord::StatementInvalid)
   end
+
+  it { should validate_presence_of :name }
 end
