@@ -10,9 +10,9 @@ RSpec.describe Mentee, :type => :model do
       expect(Mentee.count).to eq(0)
     end
 
+    it { is_expected.to validate_presence_of(:name) }
+
     it "creates a new mentee" do
       expect{ Mentee.create!(name: "Bryan Dimas") }.to change(Mentee, :count).by(1)
     end
-
-    it { is_expected.to validate_presence_of(:name) }
 end
