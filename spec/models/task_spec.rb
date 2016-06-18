@@ -5,11 +5,11 @@ RSpec.describe Task, type: :model do
     expect{ Task.create!(name: "Do my homework") }.to change(Task, :count).by(1)
   end
 
-  it "can't be created without a name" do
+  it "creates a new task" do
     expect{ Task.create!(name: "Do my homework") }.to change(Task, :count).by(1)
   end
 
-  it "validates name is present on creation" do
+  it "raises ActiveRecord error when created without a name" do
     expect{ Task.create! }.to raise_error(ActiveRecord::StatementInvalid)
   end
 end
