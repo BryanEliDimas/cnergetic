@@ -8,4 +8,6 @@ RSpec.describe Mentor, :type => :model do
     it "creates a new mentor" do
       expect{ Mentor.create! }.to change(Mentor, :count).by(1)
     end
+
+    it { is_expected.to validate_presence_of(:name) }
 end
