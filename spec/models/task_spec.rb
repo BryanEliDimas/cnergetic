@@ -30,5 +30,7 @@ RSpec.describe Task, type: :model do
     expect{ Task.create!(name: "Do my homework", due: 15.minutes.from_now) }.to change(Task, :count).by(1)
   end
 
-  it "validates due date is in the future"
+  it "validates due date is in the future" do
+    expect{ Task.create!(name: "Do my homework", due: 15.minutes.ago) }.to raise_error(ActiveRecord::RecordInvalid)
+  end
 end
