@@ -1,5 +1,6 @@
 class Task < ActiveRecord::Base
   belongs_to :mentee
+  belongs_to :mentor
 
   validates_presence_of :name
   validates_numericality_of :consequence, allow_blank: true
