@@ -33,4 +33,14 @@ RSpec.describe Task, type: :model do
   it "validates due date is in the future" do
     expect{ Task.create!(name: "Do my homework", due: 15.minutes.ago) }.to raise_error(ActiveRecord::RecordInvalid)
   end
+
+  it "belongs to a mentee" do
+    should belong_to(:mentee)
+  end
+
+  it "can have a mentee" do
+    expect{ Task.create!(name: "Do my homework", mentee_id: 1) }.to change(Task, :count).by(1)
+  end
+
+  it "can have a mentor"
 end
