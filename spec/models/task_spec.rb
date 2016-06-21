@@ -38,11 +38,13 @@ RSpec.describe Task, type: :model do
     should belong_to(:mentee)
   end
 
-  it "can have a mentee" do
+  it "can optionally have a mentee" do
+    expect{ Task.create!(name: "Do my homework") }.to change(Task, :count).by(1)
     expect{ Task.create!(name: "Do my homework", mentee_id: 1) }.to change(Task, :count).by(1)
   end
 
-  it "can have a mentor" do
+  it "can optionally have a mentor" do
+    expect{ Task.create!(name: "Do my homework") }.to change(Task, :count).by(1)
     expect{ Task.create!(name: "Do my homework", mentor_id: 1) }.to change(Task, :count).by(1)
   end
 end
