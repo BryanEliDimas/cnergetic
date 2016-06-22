@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'validates_timeliness', '~> 4.0'
 
+# Respond_with and respond_to methods
+gem "responders"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
